@@ -1,0 +1,582 @@
+likelihoods:
+  - name: EXP-Belle-timelike #up to 0.850509 GeV
+    constraints:
+      - '0->pipi::Abs{f_+}^2@Belle:2008C;end=16,I=1'
+
+  - name: EXP-CLEO-timelike #up to 0.850509 GeV
+    constraints:
+      - '0->pipi::Abs{f_+}^2@CLEO:2000B;end=26,I=1'
+
+  - name: EXP-ALEPH-timelike #up to 0.850509 GeV
+    constraints:
+      - '0->pipi::Abs{f_+}^2@ALEPH:2013A;end=30,I=1'
+
+  - name: EXP-OPAL-timelike #up to 0.850509 GeV
+    constraints:
+      - '0->pipi::Abs{f_+}^2@OPAL:1999A;end=24,I=1'
+
+  - name: EXP-NA7-spacelike
+    constraints:
+      - '0->pipi::Abs{f_+}^2@NA7:1986A'
+  - name: EXP-JLAB # From arXiv:0809.3052, table I, converted from f_pi to |f_pi|^2
+
+    manual_constraints:
+      "0->pipi::Abs{f_+}^2@JLAB":
+        type: "Gaussian"
+        observable: "0->pipi::Abs{f_+}^2(q2);I=1"
+        kinematics: {'q2': -2.45}
+        options: {'form-factors': 'BHKMNR2026'}
+        mean: 0.027889
+        sigma-stat: {"hi": 0.0033, "lo": 0.0033}
+        sigma-sys:  {"hi": 0.0043, "lo": 0.0023}
+
+  - name: root-penalty
+    manual_constraints:
+      "0->pipi::root_penalty":
+        type: "UniformBound"
+        observables: ["0->pipi::root_penalty@BHKMNR2026"]
+        options: [{}]
+        kinematics: [{}]
+        bound: 1.0
+        uncertainty: 0.01
+
+priors:
+  - name: FF-fp-I1-order6-Belle
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.76045, 'max':  0.76667, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.13882, 'max':  0.14605, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.10084, 'max':  0.44174, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.06827, 'max':  0.14541, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.04286, 'max':  0.22483, 'type': 'uniform'}
+      #ranges for when we were using the mean f
+      #- { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.76154, 'max':  0.76791, 'type': 'uniform'}
+      #- { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.14283, 'max':  0.14948, 'type': 'uniform'}
+      #- { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.01290, 'max':  0.52325, 'type': 'uniform'}
+      #- { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.02536, 'max':  0.21403, 'type': 'uniform'}
+      #- { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  0.00127, 'max':  0.25708, 'type': 'uniform'}
+
+  - name: FF-fp-I1-order6-CLEO
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75812, 'max':  0.76534, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.13822, 'max':  0.15156, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.19993, 'max':  0.44935, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.13667, 'max':  0.13682, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.08268, 'max':  0.23740, 'type': 'uniform'}
+
+
+
+  - name: FF-fp-I1-order6-ALEPH
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75373, 'max':  0.76753, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.13261, 'max':  0.15545, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.22524, 'max':  0.33792, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.17858, 'max':  0.08932, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.09507, 'max':  0.18936, 'type': 'uniform'}
+
+
+  - name: FF-fp-I1-order6-OPAL
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.74649, 'max':  0.77733, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.13045, 'max':  0.17232, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.30178, 'max':  0.58326, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.22844, 'max':  0.24115, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.12835, 'max':  0.31292, 'type': 'uniform'}
+
+
+  - name: FF-fp-I1-order7-Belle
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75966, 'max':  0.76657, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.13946, 'max':  0.14628, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.16257, 'max':  0.39968, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.42929, 'max':  0.29336, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.05382, 'max':  0.20098, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.18974, 'max':  0.10196, 'type': 'uniform'}
+      #ranges for when we were using the mean f
+      #- { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.76026, 'max':  0.76727, 'type': 'uniform'}
+      #- { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.14315, 'max':  0.15082, 'type': 'uniform'}
+      #- { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.12331, 'max':  0.43722, 'type': 'uniform'}
+      #- { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.47162, 'max':  0.23847, 'type': 'uniform'}
+      #- { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.02793, 'max':  0.22566, 'type': 'uniform'}
+      #- { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.22808, 'max':  0.05832, 'type': 'uniform'}
+
+  - name: FF-fp-I1-order7-CLEO
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75819, 'max':  0.76536, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.13697, 'max':  0.15396, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.18817, 'max':  0.43198, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.48135, 'max':  0.40314, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.06989, 'max':  0.22775, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.24034, 'max':  0.19779, 'type': 'uniform'}
+
+  - name: FF-fp-I1-order7-ALEPH
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75363, 'max':  0.76753, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.13130, 'max':  0.15570, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.24898, 'max':  0.37137, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.35600, 'max':  0.35597, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.11240, 'max':  0.20595, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.17327, 'max':  0.22305, 'type': 'uniform'}
+
+  - name: FF-fp-I1-order7-OPAL
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.74649, 'max':  0.77760, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.12337, 'max':  0.17957, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.29410, 'max':  0.59073, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.60002, 'max':  0.63966, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.14496, 'max':  0.33537, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.37345, 'max':  0.38386, 'type': 'uniform'}
+
+
+  - name: FF-fp-I1-order8-Belle
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.76140, 'max':  0.76595, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.14325, 'max':  0.15078, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.18933, 'max':  0.42897, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.70528, 'max':  0.27371, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.51572, 'max':  1.08144, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.32610, 'max':  0.07979, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^8@BHKMNR2026', 'min':  -0.43427, 'max':  0.69719, 'type': 'uniform'}
+
+
+  - name: FF-fp-I1-transform-params-order8-Belle
+    descriptions:
+      - { 'parameters': [ '0->pipi::M_(+,1,0)@BHKMNR2026',
+                          '0->pipi::Gamma_(+,1,0)@BHKMNR2026',
+                          '0->pipi::a_(+,1)^4@BHKMNR2026',
+                          '0->pipi::a_(+,1)^5@BHKMNR2026',
+                          '0->pipi::a_(+,1)^6@BHKMNR2026',
+                          '0->pipi::a_(+,1)^7@BHKMNR2026',
+                          '0->pipi::a_(+,1)^8@BHKMNR2026'],
+          'shift': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+          'transform': [[ 1.40320085e-04, -4.83701648e-05, -1.46866781e-04,
+         3.74682559e-04, -4.12060636e-05,  8.16079229e-05,
+         1.19674220e-04],
+       [ 0.00000000e+00,  2.78650646e-04, -5.82429855e-04,
+        -6.18898552e-06,  2.70164842e-04, -2.63794910e-04,
+         8.41284767e-05],
+       [ 0.00000000e+00,  0.00000000e+00,  1.94078105e-03,
+         4.86514830e-03,  4.54655897e-02,  2.81767583e-02,
+        -3.05738602e-02],
+       [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         1.04467108e-02,  1.33424006e-02,  6.78094318e-02,
+        -6.85550300e-02],
+       [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         0.00000000e+00,  2.28879544e-02,  1.00745246e-02,
+         1.57753268e-01],
+       [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         0.00000000e+00,  0.00000000e+00,  3.15588117e-02,
+        -2.55271938e-02],
+       [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         1.13151084e-01]],
+          'min': [ 5.60927668e+03,  4.99622344e+02, -1.18531686e+01, -6.02373630e+00,
+        6.55080552e-01, -7.96238900e+00, -3.83795884e+00],
+          'max': [ 5.61927622e+03,  5.09621891e+02, -1.85362177e+00,  3.97581050e+00,
+        1.06546274e+01,  2.03715782e+00,  6.16158789e+00],
+          'type': 'transform'}
+
+
+
+
+  - name: FF-fp-I1-order8-CLEO
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75816, 'max':  0.76568, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.13697, 'max':  0.15408, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.22612, 'max':  0.45218, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.67789, 'max':  0.52928, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.83948, 'max':  1.09688, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.31778, 'max':  0.23946, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^8@BHKMNR2026', 'min':  -0.64269, 'max':  0.71408, 'type': 'uniform'}
+
+
+  - name: FF-fp-I1-order8-ALEPH
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75343, 'max':  0.76778, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.12923, 'max':  0.15643, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.27160, 'max':  0.41877, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.58067, 'max':  0.68554, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.98298, 'max':  0.96103, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.27432, 'max':  0.37247, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^8@BHKMNR2026', 'min':  -0.71369, 'max':  0.63351, 'type': 'uniform'}
+
+
+  - name: FF-fp-I1-order8-OPAL
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.74663, 'max':  0.77743, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.12324, 'max':  0.17975, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.28316, 'max':  0.57894, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.70738, 'max':  0.73028, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -1.01105, 'max':  1.07740, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.42189, 'max':  0.41521, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^8@BHKMNR2026', 'min':  -0.73443, 'max':  0.65233, 'type': 'uniform'}
+
+
+
+  - name: FF-fp-I1-order9-Belle
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75992, 'max':  0.76696, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.14318, 'max':  0.15084, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.22600, 'max':  0.46551, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.76215, 'max':  0.38387, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.70499, 'max':  1.14814, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.71708, 'max':  0.54861, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^8@BHKMNR2026', 'min':  -0.56248, 'max':  0.74095, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^9@BHKMNR2026', 'min':  -0.27874, 'max':  0.31293, 'type': 'uniform'}
+
+  - name: FF-fp-I1-transform-params-order9-Belle
+    descriptions:
+      - { 'parameters': [ '0->pipi::M_(+,1,0)@BHKMNR2026',
+                          '0->pipi::Gamma_(+,1,0)@BHKMNR2026',
+                          '0->pipi::a_(+,1)^4@BHKMNR2026',
+                          '0->pipi::a_(+,1)^5@BHKMNR2026',
+                          '0->pipi::a_(+,1)^6@BHKMNR2026',
+                          '0->pipi::a_(+,1)^7@BHKMNR2026',
+                          '0->pipi::a_(+,1)^8@BHKMNR2026',
+                          '0->pipi::a_(+,1)^9@BHKMNR2026' ],
+          'shift': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+          'transform':[[ 1.36565942e-04, -4.69795752e-05, -9.46489569e-05,
+         5.23607959e-04, -1.30143675e-04,  1.77214297e-04,
+         4.25385992e-04, -1.29782439e-03],
+       [ 0.00000000e+00,  2.42558435e-04, -4.30261797e-04,
+         1.04681734e-04,  2.40307469e-04, -2.12752174e-04,
+         1.51715180e-04, -7.36661981e-05],
+       [ 0.00000000e+00,  0.00000000e+00,  1.25499949e-03,
+         4.92249734e-03,  4.47707443e-02,  2.66213638e-02,
+        -2.11540110e-02, -3.76491059e-02],
+       [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         1.18876154e-02,  1.13067641e-02,  7.02281877e-02,
+        -6.09370474e-02,  8.51708672e-02],
+       [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         0.00000000e+00,  2.29534866e-02,  8.72640587e-03,
+         1.52893927e-01, -1.78854589e-01],
+       [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         0.00000000e+00,  0.00000000e+00,  3.21986784e-02,
+        -2.71132649e-02,  1.97972304e-01],
+       [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         1.07734234e-01, -1.16609505e-01],
+       [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         0.00000000e+00,  0.00000000e+00,  0.00000000e+00,
+         0.00000000e+00,  9.62080730e-02]],
+          'min': [ 5.78768195e+03,  5.71500376e+02, -1.00372453e+01, -6.09564820e+00,
+       -1.25801765e+00, -6.50616487e+00, -4.02770633e+00, -5.61034822e+00],
+          'max': [ 5.79768149e+03,  5.81499916e+02, -3.77052755e-02,  3.90389179e+00,
+        8.74152236e+00,  3.49337539e+00,  5.97183020e+00,  4.38916639e+00],
+          'type': 'transform'}
+
+
+
+
+posteriors:
+  - name: FF-fp-I1-order6-Belle
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order6-Belle
+    likelihood:
+      - EXP-Belle-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+  - name: FF-fp-I1-order6-CLEO
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order6-CLEO
+    likelihood:
+      - EXP-CLEO-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+  - name: FF-fp-I1-order6-ALEPH
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order6-ALEPH
+    likelihood:
+      - EXP-ALEPH-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+  - name: FF-fp-I1-order6-OPAL
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order6-OPAL
+    likelihood:
+      - EXP-OPAL-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+
+
+  - name: FF-fp-I1-order7-Belle
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order7-Belle
+    likelihood:
+      - EXP-Belle-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+
+  - name: FF-fp-I1-order7-CLEO
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order7-CLEO
+    likelihood:
+      - EXP-CLEO-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+
+  - name: FF-fp-I1-order7-ALEPH
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order7-ALEPH
+    likelihood:
+      - EXP-ALEPH-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+  - name: FF-fp-I1-order7-OPAL
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order7-OPAL
+    likelihood:
+      - EXP-OPAL-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+
+
+  - name: FF-fp-I1-order8-Belle
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      #- FF-fp-I1-order8-Belle
+      - FF-fp-I1-transform-params-order8-Belle
+    likelihood:
+      - EXP-Belle-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+  - name: FF-fp-I1-order8-CLEO
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order8-CLEO
+    likelihood:
+      - EXP-CLEO-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+  - name: FF-fp-I1-order8-ALEPH
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order8-ALEPH
+    likelihood:
+      - EXP-ALEPH-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+  - name: FF-fp-I1-order8-OPAL
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order8-OPAL
+    likelihood:
+      - EXP-OPAL-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+
+
+  - name: FF-fp-I1-order9-Belle
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      #- FF-fp-I1-order9-Belle
+      - FF-fp-I1-transform-params-order9-Belle
+    likelihood:
+      - EXP-Belle-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+
+
+
+predictions:
+  - name: FF-fp2-I1-all
+    observables:
+      - name: '0->pipi::Abs{f_+}^2(q2);I=1'
+        kinematics: &ff_kinematics  [
+           {'q2': -2.5}, {'q2': -2.0}, {'q2': -1.5}, {'q2': -1.0}, {'q2': -0.93875}, {'q2': -0.8775}, {'q2': -0.81625},
+           {'q2': -0.755}, {'q2': -0.69375}, {'q2': -0.6325}, {'q2': -0.57125}, {'q2': -0.51}, {'q2': -0.44875}, {'q2': -0.3875},
+           {'q2': -0.32625}, {'q2': -0.265}, {'q2': -0.20375}, {'q2': -0.1425}, {'q2': -0.08125}, {'q2': -0.02}, {'q2': -0.01},
+           {'q2': -0.0067}, {'q2': -0.0034}, {'q2': 0.0033}, {'q2': 0.0066}, {'q2': 0.0099}, {'q2': 0.0133}, {'q2': 0.0166},
+           {'q2': 0.0199}, {'q2': 0.023}, {'q2': 0.0266}, {'q2': 0.0299}, {'q2': 0.033}, {'q2': 0.0366}, {'q2': 0.0399}, {'q2': 0.043},
+           {'q2': 0.0466}, {'q2': 0.05}, {'q2': 0.0533}, {'q2': 0.0566}, {'q2': 0.06}, {'q2': 0.0633}, {'q2': 0.0667}, {'q2': 0.0699},
+           {'q2': 0.0733}, {'q2': 0.0766}, {'q2': 0.08}, {'q2': 0.0833}, {'q2': 0.0866},{'q2': 0.09}, {'q2': 0.1}, {'q2': 0.1375},
+           {'q2': 0.1750}, {'q2': 0.2125}, {'q2': 0.25}, {'q2': 0.2875}, {'q2': 0.3250}, {'q2': 0.3625}, {'q2': 0.4}, {'q2': 0.4375},
+           {'q2': 0.4750}, {'q2': 0.5125}, {'q2': 0.55},  {'q2': 0.56}, {'q2': 0.561},
+           {'q2': 0.562}, {'q2': 0.563}, {'q2': 0.564}, {'q2': 0.565}, {'q2': 0.566}, {'q2': 0.567}, {'q2': 0.568}, {'q2': 0.569},
+           {'q2': 0.570}, {'q2': 0.571}, {'q2': 0.572}, {'q2': 0.573}, {'q2': 0.574}, {'q2': 0.575}, {'q2': 0.576}, {'q2': 0.577},
+           {'q2': 0.578}, {'q2': 0.579}, {'q2': 0.580}, {'q2': 0.581}, {'q2': 0.582}, {'q2': 0.583}, {'q2': 0.584}, {'q2': 0.585},
+           {'q2': 0.586}, {'q2': 0.587}, {'q2': 0.588}, {'q2': 0.589}, {'q2': 0.590}, {'q2': 0.591}, {'q2': 0.592}, {'q2': 0.593},
+           {'q2': 0.594}, {'q2': 0.595}, {'q2': 0.596}, {'q2': 0.597}, {'q2': 0.598}, {'q2': 0.599}, {'q2': 0.6}, {'q2': 0.601},
+           {'q2': 0.602}, {'q2': 0.603}, {'q2': 0.604}, {'q2': 0.605}, {'q2': 0.606}, {'q2': 0.607}, {'q2': 0.608}, {'q2': 0.609},
+           {'q2': 0.61}, {'q2': 0.611}, {'q2': 0.612}, {'q2': 0.613}, {'q2': 0.614}, {'q2': 0.615}, {'q2': 0.616}, {'q2': 0.617},
+           {'q2': 0.618}, {'q2': 0.619}, {'q2': 0.62}, {'q2': 0.621}, {'q2': 0.622}, {'q2': 0.623}, {'q2': 0.624}, {'q2': 0.625},
+           {'q2': 0.626}, {'q2': 0.627}, {'q2': 0.628}, {'q2': 0.629}, {'q2': 0.63}, {'q2': 0.7}, {'q2': 0.8},{'q2': 0.9}, {'q2': 1.0},
+           {'q2': 1.1}, {'q2': 1.2}, {'q2': 1.3}, {'q2': 1.4}, {'q2': 1.5}, {'q2': 1.6}, {'q2': 1.7}, {'q2': 1.8}, {'q2': 1.9}, {'q2': 2.0}]
+
+  - name: real-partial-wave-I1
+    observables:
+      - name: '0->pipi::Re{t_1^1}(q2)@BHKMNR2026'
+        kinematics: &t_kinematics [{'q2': -2.5}, {'q2': -2.4}, {'q2': -2.3}, {'q2': -2.2}, {'q2': -2.1}, {'q2': -2.0}, {'q2': -1.9},
+           {'q2': -1.8}, {'q2': -1.7}, {'q2': -1.6}, {'q2': -1.5}, {'q2': -1.4}, {'q2': -1.3}, {'q2': -1.2}, {'q2': -1.1}, {'q2': -1.0},
+           {'q2': -0.9}, {'q2': -0.8}, {'q2': -0.7}, {'q2': -0.6}, {'q2': -0.5}, {'q2': -0.4}, {'q2': -0.3}, {'q2': -0.2},
+           {'q2': -0.1}, {'q2': -0.07}, {'q2': -0.067}, {'q2': -0.0645}, {'q2': -0.062}, {'q2': -0.0591}, {'q2': -0.0564},
+           {'q2': -0.0536}, {'q2': -0.051}, {'q2': -0.0482}, {'q2': -0.0455}, {'q2': -0.043}, {'q2': -0.04}, {'q2': -0.0373},
+           {'q2': -0.0345}, {'q2': -0.032}, {'q2': -0.0291}, {'q2': -0.0264}, {'q2': -0.02364}, {'q2': -0.02091}, {'q2': -0.0182},
+           {'q2': -0.0155}, {'q2': -0.0127}, {'q2': -0.01}, {'q2': -0.0073}, {'q2': -0.00455}, {'q2': -0.00182}, {'q2': 0.00091},
+           {'q2': 0.0036}, {'q2': 0.0064}, {'q2': 0.0091}, {'q2': 0.012}, {'q2': 0.0145}, {'q2': 0.0173},
+           {'q2': 0.02}, {'q2': 0.02273}, {'q2': 0.0255}, {'q2': 0.0282}, {'q2': 0.03091}, {'q2': 0.03363},
+           {'q2': 0.0364}, {'q2': 0.0391}, {'q2': 0.042}, {'q2': 0.0445}, {'q2': 0.0473}, {'q2': 0.05},
+           {'q2': 0.0527}, {'q2': 0.0555}, {'q2': 0.0582}, {'q2': 0.062}, {'q2': 0.064}, {'q2': 0.066},
+           {'q2': 0.068}, {'q2': 0.072}, {'q2': 0.074}, {'q2': 0.077}, {'q2': 0.08}, {'q2': 0.083},
+           {'q2': 0.085}, {'q2': 0.089}, {'q2': 0.091}, {'q2': 0.094}, {'q2': 0.096}, {'q2': 0.0991},
+           {'q2': 0.103}, {'q2': 0.105}, {'q2': 0.107}, {'q2': 0.11}, {'q2': 0.113}, {'q2': 0.115},
+           {'q2': 0.1182}, {'q2': 0.121}, {'q2': 0.124}, {'q2': 0.126}, {'q2': 0.128}, {'q2': 0.132},
+           {'q2': 0.135}, {'q2': 0.137}, {'q2': 0.139}, {'q2': 0.143}, {'q2': 0.145}, {'q2': 0.147},
+           {'q2': 0.151}, {'q2': 0.153}, {'q2': 0.155}, {'q2': 0.157}, {'q2': 0.159}, {'q2': 0.162}, {'q2': 0.165},
+           {'q2': 0.167}, {'q2': 0.17}, {'q2': 0.173}, {'q2': 0.175}, {'q2': 0.1782}, {'q2': 0.181},
+           {'q2': 0.184}, {'q2': 0.186}, {'q2': 0.188}, {'q2': 0.192}, {'q2': 0.195}, {'q2': 0.197}, {'q2': 0.2},
+           {'q2': 0.3}, {'q2': 0.4}, {'q2': 0.5}, {'q2': 0.6}, {'q2': 0.7}, {'q2': 0.8}, {'q2': 0.9}, {'q2': 1.0},
+           {'q2': 1.1}, {'q2': 1.2}, {'q2': 1.3}, {'q2': 1.4}, {'q2': 1.5}, {'q2': 1.6}, {'q2': 1.7}, {'q2': 1.8},
+           {'q2': 1.9}, {'q2': 2.0}, {'q2': 2.1}, {'q2': 2.2}, {'q2': 2.3}, {'q2': 2.4}, {'q2': 2.5}]
+
+
+
+  - name: imag-partial-wave-I1
+    observables:
+      - name: '0->pipi::Im{t_1^1}(q2)@BHKMNR2026'
+        kinematics: *t_kinematics
+
+
+  - name: FF-arg-fp-I1-timelike
+    observables:
+      - name: '0->pipi::Arg{f_+}(q2);I=1'
+        kinematics: *ff_kinematics
+
+
+  - name: FF-fp-I1-pion-charge-radius-param
+    observables:
+      - name: '0->pipi::d{f_+}_dpsi_at_0@BHKMNR2026'
+
+  - name: FF-fp-I1-scattering-length-params
+    observables:
+      - name: '0->pipi::d2fdpsi2_over_f@BHKMNR2026'
+      - name: '0->pipi::d3fdpsi3_over_f@BHKMNR2026'
+      - name: '0->pipi::d4fdpsi4_over_f@BHKMNR2026'
+      - name: '0->pipi::d5fdpsi5_over_f@BHKMNR2026'
+
+
+  - name: FF-fp-I1-dispersive-bound
+    observables:
+      - name: '0->pipi::Saturation@BHKMNR2026'
+
+  - name: re-rho-residue-psi
+    observables:
+      - name: '0->pipi::Re{Res_psi{f_+}}@BHKMNR2026'
+
+  - name: im-rho-residue-psi
+    observables:
+      - name: '0->pipi::Im{Res_psi{f_+}}@BHKMNR2026'
+
+  - name: a_0
+    observables:
+      - name: '0->pipi::a_(+,1)^0@BHKMNR2026'
+
+  - name: a_1
+    observables:
+      - name: '0->pipi::a_(+,1)^1@BHKMNR2026'
+
+  - name: a_2
+    observables:
+      - name: '0->pipi::a_(+,1)^2@BHKMNR2026'
+
+  - name: a_3
+    observables:
+      - name: '0->pipi::a_(+,1)^3@BHKMNR2026'
