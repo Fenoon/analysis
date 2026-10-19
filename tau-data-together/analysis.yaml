@@ -41,6 +41,15 @@ likelihoods:
         uncertainty: 0.01
 
 priors:
+  - name: FF-fp-I1-order5-without-Belle
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75830, 'max':  0.76446, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.13882, 'max':  0.15037, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.19555, 'max':  0.39649, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.13118, 'max':  0.09693, 'type': 'uniform'}
+
+
+
   - name: FF-fp-I1-order6-together
     descriptions:
       - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75987, 'max':  0.76438, 'type': 'uniform'}
@@ -48,12 +57,7 @@ priors:
       - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.06546, 'max':  0.42258, 'type': 'uniform'}
       - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.07192, 'max':  0.09596, 'type': 'uniform'}
       - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.01972, 'max':  0.22535, 'type': 'uniform'}
-      #ranges for when we were using the mean f
-      #- { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.76029, 'max':  0.76488, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.14308, 'max':  0.14875, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  0.00745, 'max':  0.50578, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.04286, 'max':  0.14309, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  0.01893, 'max':  0.26435, 'type': 'uniform'}
+
 
   - name: FF-fp-I1-order6-without-Belle
     descriptions:
@@ -71,13 +75,6 @@ priors:
       - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.38001, 'max':  0.12086, 'type': 'uniform'}
       - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.02607, 'max':  0.17830, 'type': 'uniform'}
       - { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.17067, 'max':  0.05026, 'type': 'uniform'}
-      #ranges for when we were using the mean f
-      #- { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75961, 'max':  0.76424, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.14370, 'max':  0.14997, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.05069, 'max':  0.33018, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.41097, 'max':  0.03904, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  0.00596, 'max':  0.19533, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.20288, 'max':  0.00301, 'type': 'uniform'}
 
 
   - name: FF-fp-I1-order7-without-Belle
@@ -99,14 +96,6 @@ priors:
       - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.56687, 'max':  0.99915, 'type': 'uniform'}
       - { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.30170, 'max':  0.11490, 'type': 'uniform'}
       - { 'parameter': '0->pipi::a_(+,1)^8@BHKMNR2026', 'min':  -0.45665, 'max':  0.65545, 'type': 'uniform'}
-      #ranges for when we were using the mean f
-      # - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75957, 'max':  0.76507, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.14382, 'max':  0.15054, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.14861, 'max':  0.36098, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.71100, 'max':  0.16272, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.41787, 'max':  0.99974, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.33123, 'max':  0.05442, 'type': 'uniform'}
-      #- { 'parameter': '0->pipi::a_(+,1)^8@BHKMNR2026', 'min':  -0.37164, 'max':  0.64465, 'type': 'uniform'}
 
 
   - name: FF-fp-I1-order8-without-Belle
@@ -121,8 +110,36 @@ priors:
 
 
 
+  - name: FF-fp-I1-order8-All-rescaled
+    descriptions:
+      - { 'parameter': '0->pipi::M_(+,1,0)@BHKMNR2026', 'min':  0.75900, 'max':  0.76516, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::Gamma_(+,1,0)@BHKMNR2026', 'min':  0.13972, 'max':  0.14753, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^4@BHKMNR2026', 'min':  -0.19240, 'max':  0.37491, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^5@BHKMNR2026', 'min':  -0.69086, 'max':  0.31344, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^6@BHKMNR2026', 'min':  -0.62441, 'max':  1.04868, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^7@BHKMNR2026', 'min':  -0.31417, 'max':  0.13666, 'type': 'uniform'}
+      - { 'parameter': '0->pipi::a_(+,1)^8@BHKMNR2026', 'min':  -0.49805, 'max':  0.68746, 'type': 'uniform'}
 
 posteriors:
+  - name: FF-fp-I1-order5-without-Belle
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order5-without-Belle
+    likelihood:
+      - EXP-CLEO-timelike
+      - EXP-ALEPH-timelike
+      - EXP-OPAL-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
+
+
   - name: FF-fp-I1-order6-together
     global_options:
       form-factors: BHKMNR2026
@@ -234,6 +251,25 @@ posteriors:
 
 
 
+  - name: FF-fp-I1-order8-All-rescaled
+    global_options:
+      form-factors: BHKMNR2026
+      n-resonances: '1'
+      rescale-factor: '1.3601'
+    fixed_parameters:
+      0->pipi::s_0@BHKMNR2026:  0.0
+      0->pipi::s_in@BHKMNR2026: 0.850509
+    prior:
+      - FF-fp-I1-order8-All-rescaled
+    likelihood:
+      - EXP-OPAL-timelike
+      - EXP-Belle-timelike
+      - EXP-CLEO-timelike
+      - EXP-ALEPH-timelike
+      - EXP-NA7-spacelike
+      - EXP-JLAB
+      - root-penalty
+
 
 
 predictions:
@@ -259,7 +295,8 @@ predictions:
            {'q2': 0.61}, {'q2': 0.611}, {'q2': 0.612}, {'q2': 0.613}, {'q2': 0.614}, {'q2': 0.615}, {'q2': 0.616}, {'q2': 0.617},
            {'q2': 0.618}, {'q2': 0.619}, {'q2': 0.62}, {'q2': 0.621}, {'q2': 0.622}, {'q2': 0.623}, {'q2': 0.624}, {'q2': 0.625},
            {'q2': 0.626}, {'q2': 0.627}, {'q2': 0.628}, {'q2': 0.629}, {'q2': 0.63}, {'q2': 0.7}, {'q2': 0.8},{'q2': 0.9}, {'q2': 1.0},
-           {'q2': 1.1}, {'q2': 1.2}, {'q2': 1.3}, {'q2': 1.4}, {'q2': 1.5}, {'q2': 1.6}, {'q2': 1.7}, {'q2': 1.8}, {'q2': 1.9}, {'q2': 2.0}]
+           {'q2': 1.1}, {'q2': 1.2}, {'q2': 1.3}, {'q2': 1.4}, {'q2': 1.5}, {'q2': 1.6}, {'q2': 1.7}, {'q2': 1.8}, {'q2': 1.9},
+           {'q2': 2.0}, {'q2': 2.1}, {'q2': 2.2}, {'q2': 2.3}, {'q2': 2.4}, {'q2': 2.5}]
 
 
   - name: real-partial-wave-I1
